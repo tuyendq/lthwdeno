@@ -1,0 +1,9 @@
+import { serve } from "https:/deno.land/std@0.55.0/http/server.ts";
+
+const server = serve({ port: 8000 });
+
+console.log("Now serving on port 8000 ");
+
+for await (const req of server) {
+	req.response({ body: "Hello World" });
+}
